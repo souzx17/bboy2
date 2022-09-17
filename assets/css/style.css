@@ -1,0 +1,309 @@
+:root {
+    --bgColor: #222;
+    --darkOpa: rgba(0, 0, 0, 0.7);
+    --lightOpa: rgba(255, 255, 255, 0.9);
+    --indicatorColor: rgb(255, 255, 255);
+    --defaultMaxHeight: 55vh;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #fff;
+    background-color: var(--bgColor);
+    overflow-x: hidden;
+    font-weight: 450;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0px;
+}
+
+/* New Buttons */
+.btn-purple {
+    background-color: var(--bs-purple) !important;
+    color: #FFF !important;
+}
+.btn-purple:hover {
+    opacity: 0.8;
+}
+
+.btn-blue {
+    background-color: var(--bs-blue) !important;
+    color: #FFF !important;
+    opacity: 0.7;
+}
+.btn-blue:hover {
+    opacity: 0.9;
+}
+
+.btn-insta {
+    background: linear-gradient(45deg, #fd5949 0%, #d6249f 100%) !important;
+    border-left-color: #fd5949 !important;
+    border-right-color: #d6249f !important;
+    color: #FFF !important;
+    opacity: 0.8;
+}
+.btn-insta:hover {
+    opacity: 1;
+}
+
+/* Particles JS */
+
+#particles-js {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bgColor);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    transition: 3s;
+}
+
+.count-particles{
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13E8E9;
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.js-count-particles{
+    font-size: 1.1em;
+}
+
+#stats,
+.count-particles{
+    user-select: none;
+}
+
+#stats{
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+.count-particles{
+    border-radius: 0 0 3px 3px;
+}
+
+.divider {
+    overflow: hidden;
+    line-height: 0;
+}
+
+.divider-top {
+    transform: rotate(180deg);
+}
+
+.divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 30px;
+}
+
+.divider .shape {
+    fill: var(--lightOpa);
+    transition: fill 3s;
+}
+
+.left-icon-holder {
+    position: relative;
+    width: 100%;
+}
+
+.left-icon-holder i {
+    position: absolute;
+    line-height: 24px;
+    top: 50%;
+    margin-top: -12px;
+    left: 10px;
+}
+
+.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile-container {
+    border-left: solid 2px var(--lightOpa);
+    border-right: solid 2px var(--lightOpa);
+}
+
+.profile-left {
+    height: 100%;
+    background-color: var(--lightOpa);
+}
+
+.profile-left a {
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.profile-right {
+    height: 100%;
+    background-color: var(--darkOpa);
+    position: relative;
+    transition: 1s ease-in;
+}
+
+.profile-right .carousel-item {
+    height: var(--defaultMaxHeight);
+    padding-bottom: 5vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.profile-right .carousel-item::-webkit-scrollbar {
+    display: none;
+}
+
+.avatar-img {
+    box-shadow: 0 0 10px 0 #333;
+    border-radius: 3px;
+}
+
+#profileCarousel .carousel-indicators {
+    position: absolute;
+    bottom: -50px;
+}
+
+#profileCarousel .carousel-indicators button {
+    background-color: var(--indicatorColor);
+    opacity: 0.3;
+}
+
+#profileCarousel .carousel-indicators button.active {
+    opacity: 0.8;
+}
+
+.carousel-media {
+    width: 100%;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-media a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+}
+
+.carousel-media iframe, .carousel-media img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.video-list iframe {
+    width: 100%;
+    max-width: 100%;
+    min-height: 200px !important;
+}
+
+.carousel-item img {
+    object-fit: cover;
+}
+
+.carousel-media img {
+    object-fit: contain !important;
+}
+
+/* Device Settings */
+
+@media only screen and (max-width: 1200px) {
+
+    .main {
+        min-height: auto;
+    }
+
+    #profileCarousel .carousel-indicators {
+        bottom: -20px;
+    }
+
+    .profile-left {
+        box-shadow: none !important;
+    }
+
+    .profile-right {
+        padding-top: 3vh !important;
+        padding-left: 3vh !important;
+        padding-right: 3vh !important;
+        padding-bottom: 2vh !important;
+    }
+
+    .profile-right .carousel-item {
+        height: auto;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .carousel-item img {
+        height: 250px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    
+    :root {
+        --defaultMaxHeight: 70vh;
+    }
+
+    .divider svg {
+        height: 5px;
+    }
+
+    .carousel-media iframe, .carousel-media img {
+        height: 200px !important;
+    }
+
+    .left-icon-holder i {
+        display: none;
+    }
+
+	.animated {
+		/*CSS transitions*/
+		-o-transition-property: none !important;
+		-moz-transition-property: none !important;
+		-ms-transition-property: none !important;
+		-webkit-transition-property: none !important;
+		transition-property: none !important;
+		/*CSS transforms*/
+		-o-transform: none !important;
+		-moz-transform: none !important;
+		-ms-transform: none !important;
+		-webkit-transform: none !important;
+		transform: none !important;
+		/*CSS animations*/
+		-webkit-animation: none !important;
+		-moz-animation: none !important;
+		-o-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+	}
+
+    .carousel-item img {
+        height: 150px;
+    }
+
+}
